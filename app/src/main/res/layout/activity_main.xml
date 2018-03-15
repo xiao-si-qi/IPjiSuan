@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.xiaosiqi.ipjisuan.MainActivity">
-
     <LinearLayout
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
@@ -64,13 +63,17 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="ip二进制表示：" />
+                        android:text="IP二进制："
+                        android:layout_weight="1.8"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:textSize="13dp"
+                        android:layout_weight="5"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv二进制IP"
                         android:text="" />
                 </LinearLayout>
 
@@ -79,14 +82,19 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+
+                        android:layout_weight="1.8"
                         android:layout_height="wrap_content"
-                        android:text="掩码二进制表示：" />
+                        android:text="掩码二进制：" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:text=""
+                        android:textSize="13dp"
+                        android:id="@+id/tv二进制掩码"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,6 +108,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv掩码"
                         android:text="" />
                 </LinearLayout>
                 <LinearLayout
@@ -114,6 +123,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv网络位长度"
                         android:text="" />
                 </LinearLayout>
                 <LinearLayout
@@ -128,6 +138,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv本网网络地址"
                         android:text="" />
                 </LinearLayout>
 
@@ -143,6 +154,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv本网第一个主机地址"
                         android:text="" />
                 </LinearLayout>
 
@@ -158,6 +170,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv本网最后一个主机地址"
                         android:text="" />
                 </LinearLayout>
                 <LinearLayout
@@ -172,6 +185,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv本网段广播地址"
                         android:text="" />
                 </LinearLayout>
 

@@ -20,12 +20,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="关于"
-            android:gravity="center"
-            android:textSize="25dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="使用说明："
             android:textSize="25dp"/>
 
@@ -82,8 +76,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="关于作者："
+            android:text="关于："
             android:textSize="25dp"/>
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:text="本项目在github上，项目地址："
+            />
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="https://github.com/xiaosiqi111/IPjiSuan"
+            />
         <TextView
         android:layout_width="256dp"
         android:layout_height="wrap_content"

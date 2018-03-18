@@ -1,17 +1,24 @@
 package com.example.xiaosiqi.ipjisuan;
 
+import android.util.Log;
+
 /**
  * Created by xiaosiqi on 2018/1/28.
  * //IP转二进制
  */
 
 public class IP转二进制 {
-    public static String ip转二进制(int[] ip)
+    public static String ip转二进制(String strIP)
 
-    {String strip="";
+    {  int[] intIp={0,0,0,0};
+        String[] ip = strIP.split("[.]");
+        for (int i = 0; i <ip.length ; i++) {
+            intIp[i]= Integer.valueOf(ip[i]);
+        }
+        String strip="";
      String str合成ip="";
         for (int i = 0; i < ip.length; i++) {
-           strip=Integer.toBinaryString(ip[i]);
+           strip=Integer.toBinaryString(intIp[i]);
            if (strip.length()<8){
                for (;strip.length()<8 ; ) {
                  strip=0+strip;

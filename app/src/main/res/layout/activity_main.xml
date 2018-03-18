@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.xiaosiqi.ipjisuan.MainActivity">
+    android:orientation="vertical"
+    >
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <include layout="@layout/headbar_toolbar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -20,14 +33,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="输入要计算的地址" />
+                android:text="输入要计算的IP地址" />
 
             <EditText
                 android:id="@+id/etIP"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -39,24 +53,17 @@
 
             <EditText
                 android:id="@+id/etMask"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
         <Button
             android:id="@+id/btJiSuan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="计算" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="1000dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -65,16 +72,16 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="IP二进制："
-                        android:layout_weight="1.8"/>
+                        android:layout_weight="1.8"
+                        android:text="IP二进制：" />
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:textSize="13dp"
-                        android:layout_weight="5"
-                        android:layout_height="wrap_content"
                         android:id="@+id/tv二进制IP"
-                        android:text="" />
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text=""
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -84,18 +91,19 @@
                     <TextView
                         android:layout_width="0dp"
 
-                        android:layout_weight="1.8"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
                         android:text="掩码二进制：" />
 
                     <TextView
+                        android:id="@+id/tv二进制掩码"
                         android:layout_width="0dp"
-                        android:layout_weight="5"
                         android:layout_height="wrap_content"
+                        android:layout_weight="5"
                         android:text=""
-                        android:textSize="13dp"
-                        android:id="@+id/tv二进制掩码"/>
+                        android:textSize="13dp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -106,11 +114,12 @@
                         android:text="子网掩码：" />
 
                     <TextView
+                        android:id="@+id/tv掩码"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv掩码"
                         android:text="" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -121,11 +130,12 @@
                         android:text="网络位长度：" />
 
                     <TextView
+                        android:id="@+id/tv网络位长度"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv网络位长度"
                         android:text="" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -136,9 +146,9 @@
                         android:text="本网段网络地址" />
 
                     <TextView
+                        android:id="@+id/tv本网网络地址"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv本网网络地址"
                         android:text="" />
                 </LinearLayout>
 
@@ -152,9 +162,9 @@
                         android:text="本网段第一个主机地址：" />
 
                     <TextView
+                        android:id="@+id/tv本网第一个主机地址"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv本网第一个主机地址"
                         android:text="" />
                 </LinearLayout>
 
@@ -168,11 +178,27 @@
                         android:text="本网段最后一个主机地址：" />
 
                     <TextView
+                        android:id="@+id/tv本网最后一个主机地址"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv本网最后一个主机地址"
                         android:text="" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="本网段可用主机数：" />
+
+                    <TextView
+                        android:id="@+id/tv本网段可用主机数"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -183,15 +209,139 @@
                         android:text="本网段广播地址：" />
 
                     <TextView
+                        android:id="@+id/tv本网段广播地址"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv本网段广播地址"
                         android:text="" />
                 </LinearLayout>
 
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="子网划分   "
+                        android:gravity="center"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="网络的个数："/>
+                        <EditText
+                            android:maxLines="1"
+                            android:inputType="number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/ed要划分网络的个数"/>
+                    </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="每个网络的可用主机数："/>
+                            <EditText
+                                android:maxLines="1"
+                                android:inputType="number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ed网络中主机的个数"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt子网划分"
+                    android:text="开始子网划分(网络个数主机数任填其一)"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="计算过程："/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv计算过程"
+                        android:text=""/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="划分子网后的子网掩码：" />
+
+                    <TextView
+                        android:id="@+id/tv划分子网后的子网掩码"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="每个子网的可用主机数："/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv子网的可用主机数"
+                        android:text=""/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="总共划分的网络数："/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv总共划分的网络数"
+                        android:text=""/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ListView
+                        android:id="@+id/ls子网列表"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </ListView>
+                </LinearLayout>
+
+
             </LinearLayout>
         </ScrollView>
-
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_gravity="start"
+        android:layout_height="match_parent">
+        <include layout="@layout/memu"></include>
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

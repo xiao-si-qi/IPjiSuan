@@ -34,6 +34,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="注意："
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:text="请不要将大的网络划分过多的子网，这会导致列表加载过长，导致程序弹出无响应对话框。"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="IP分类："
             android:textSize="25dp"/>
 

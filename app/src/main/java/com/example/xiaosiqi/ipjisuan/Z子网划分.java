@@ -72,10 +72,8 @@ public class Z子网划分 {
         Log.d(TAG, "借位后的子网掩码: "+j借位后的子网掩码);
         Log.d(TAG, "e二进制IP地址: "+e二进制IP地址);
         StringBuilder strIP = new StringBuilder(e二进制IP地址);
-        for (int i = z左边界; i <=y右边界 ; i++) {             //把填充位置填充为0
-            if (strIP.charAt(i-1)=='.')continue; //绕过中间的点
-                strIP=strIP.replace(i-1,i,"0");
-        }
+
+        Log.d(TAG, "填充0后的地址"+strIP);
         for (int i = y右边界; i >= z左边界&&e二进制网络编号的长度>0; i--) {
             Log.d(TAG, "e二进制网络编号的长度 "+e二进制网络编号的长度);
             if (strIP.charAt(i-1)=='.')continue; //绕过中间的点

@@ -175,15 +175,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, "onClick: " + x需要借的位数);
 
                         iPclasses.clear();//清空列表
-                        MyThin myThin=new MyThin(x需要借的位数);
+                        MyThin myThin = new MyThin(x需要借的位数);
                         myThin.start();
-                        d等待框 = ProgressDialog.show(MainActivity.this, "正在计算中", "总共要划分"+(int) Math.pow(2, x需要借的位数) + "个子网，"+"正在计算中，请稍后……");
+                        d等待框 = ProgressDialog.show(MainActivity.this, "正在计算中", "总共要划分" + (int) Math.pow(2, x需要借的位数) + "个子网，" + "正在计算中，请稍后……");
 
                     } catch (Exception e) {
-                        if (e.getMessage().equals("-1")){
+                        if (e.getMessage().equals("-1")) {
                             Toast.makeText(context, "主机位不够借位", Toast.LENGTH_LONG).show();
-                        }
-                        else {
+                        } else {
                             Toast.makeText(context, "你的输入有误或没有点击上面的计算按钮", Toast.LENGTH_LONG).show();
                         }
                         Log.d(TAG, "onClick: " + e + "  " + x需要借的位数);
@@ -206,25 +205,24 @@ public class MainActivity extends AppCompatActivity {
                         }//如果发现不够借，就抛出异常；
                         tv划分子网后的子网掩码.setText(IP转二进制.二进制转IP(str子网划分后的二进制掩码) + "/" + IP转二进制.二进制掩码转网络长度(str子网划分后的二进制掩码));
                         tv子网的可用主机数.setText(IP地址计算.j计算可用ip的个数(str子网划分后的二进制掩码) + "");
-                        int x需要借的位数=(32 - (x需要保留的位数 + IP转二进制.二进制掩码转网络长度(str二进制掩码)));
-                        int z总共划分的网络数=(int) Math.pow(2,x需要借的位数 );
-                        tv总共划分的网络数.setText( z总共划分的网络数+ "");
+                        int x需要借的位数 = (32 - (x需要保留的位数 + IP转二进制.二进制掩码转网络长度(str二进制掩码)));
+                        int z总共划分的网络数 = (int) Math.pow(2, x需要借的位数);
+                        tv总共划分的网络数.setText(z总共划分的网络数 + "");
                         Log.d(TAG, "onClick: " + x需要保留的位数);
 
                         iPclasses.clear();//清空列表
 
-                       MyThin myThin=new MyThin(x需要借的位数);
-                       myThin.start();
-                        d等待框 = ProgressDialog.show(MainActivity.this, "正在计算中", "总共要划分"+(int) Math.pow(2, (32 - (x需要保留的位数 + IP转二进制.二进制掩码转网络长度(str二进制掩码)))) + "个子网，"+"正在计算中，请稍后……");
+                        MyThin myThin = new MyThin(x需要借的位数);
+                        myThin.start();
+                        d等待框 = ProgressDialog.show(MainActivity.this, "正在计算中", "总共要划分" + (int) Math.pow(2, (32 - (x需要保留的位数 + IP转二进制.二进制掩码转网络长度(str二进制掩码)))) + "个子网，" + "正在计算中，请稍后……");
 
                     } catch (Exception e) {
-                        if (e.getMessage().equals("-1")){
+                        if (e.getMessage().equals("-1")) {
                             Toast.makeText(context, "主机位不够", Toast.LENGTH_LONG).show();
-                        }
-                        else {
+                        } else {
                             Toast.makeText(context, "你的输入有误或没有点击上面的计算按钮", Toast.LENGTH_LONG).show();
                         }
-                        Log.d(TAG, "错误:"+ e + "" + x需要保留的位数);
+                        Log.d(TAG, "错误:" + e + "" + x需要保留的位数);
                     }
                 }
             }
@@ -276,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             Message message = new Message();
             for (int x = 0; x < Math.pow(2, x需要借的位数); x++) {
-                String z子网划分前的网络地址=IP转二进制.ip转二进制(IP地址计算.j计算网络地址(str二进制Ip, str二进制掩码));
+                String z子网划分前的网络地址 = IP转二进制.ip转二进制(IP地址计算.j计算网络地址(str二进制Ip, str二进制掩码));
                 String z子网划分后的网络地址 = Z子网划分.计算借位后的网络地址(x, z子网划分前的网络地址, str二进制掩码, str子网划分后的二进制掩码);
                 iPclasses.add(new IPclass(x, IP转二进制.二进制转IP(z子网划分后的网络地址), IP地址计算.j计算第一个ip(z子网划分后的网络地址, str子网划分后的二进制掩码), IP地址计算.j计算最后的IP地址(z子网划分后的网络地址, str子网划分后的二进制掩码), IP地址计算.j计算广播地址(z子网划分后的网络地址, str子网划分后的二进制掩码)));
             }

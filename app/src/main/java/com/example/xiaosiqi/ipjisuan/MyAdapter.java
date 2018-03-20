@@ -15,10 +15,10 @@ import java.util.List;
  * Created by xiaos on 2018/3/17.
  */
 
-public class MyAdapter extends BaseAdapter{
-   private List<IPclass> z子网列表数据=new ArrayList<>();
-   private Context context;
-   private LayoutInflater mInflater;
+public class MyAdapter extends BaseAdapter {
+    private List<IPclass> z子网列表数据 = new ArrayList<>();
+    private Context context;
+    private LayoutInflater mInflater;
 
     public MyAdapter(List<IPclass> z子网列表数据, Context context) {
         this.z子网列表数据 = z子网列表数据;
@@ -39,20 +39,20 @@ public class MyAdapter extends BaseAdapter{
     public long getItemId(int i) {
         return i;
     }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        if (view==null)
-        {
-            mInflater=LayoutInflater.from(context);
-            view=mInflater.inflate(R.layout.line,null);
+        if (view == null) {
+            mInflater = LayoutInflater.from(context);
+            view = mInflater.inflate(R.layout.line, null);
         }
-        IPclass y一行数据=z子网列表数据.get(i);
-        TextView tv网络编号= (TextView) view.findViewById(R.id.tv网络编号);
-        TextView tv本网网络地址= (TextView) view.findViewById(R.id.tv本网网络地址);
-        TextView tv本网第一个主机地址= (TextView) view.findViewById(R.id.tv本网第一个主机地址);
-        TextView tv本网最后一个主机地址= (TextView) view.findViewById(R.id.tv本网最后一个主机地址);
-        TextView tv本网段广播地址= (TextView) view.findViewById(R.id.tv本网段广播地址);
-        tv网络编号.setText(y一行数据.getW网络编号()+"");
+        IPclass y一行数据 = z子网列表数据.get(i);
+        TextView tv网络编号 = (TextView) view.findViewById(R.id.tv网络编号);
+        TextView tv本网网络地址 = (TextView) view.findViewById(R.id.tv本网网络地址);
+        TextView tv本网第一个主机地址 = (TextView) view.findViewById(R.id.tv本网第一个主机地址);
+        TextView tv本网最后一个主机地址 = (TextView) view.findViewById(R.id.tv本网最后一个主机地址);
+        TextView tv本网段广播地址 = (TextView) view.findViewById(R.id.tv本网段广播地址);
+        tv网络编号.setText(y一行数据.getW网络编号() + "");
         tv本网网络地址.setText(y一行数据.getW网络地址());
         tv本网第一个主机地址.setText(y一行数据.getD第一个主机());
         tv本网最后一个主机地址.setText(y一行数据.getZ最后一个主机());

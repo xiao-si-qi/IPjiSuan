@@ -1,6 +1,7 @@
 package com.example.xiaosiqi.ipjisuan;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,11 +50,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv本网段可用主机数;
     private TextView tv子网的可用主机数;
     private TextView tv总共划分的网络数;
+    private TextView bt归属地;
+    private TextView bt说明;
+    private TextView bt关于;
     private ImageView btXuanXiang;
     private ListView ls子网列表;
     private Context context = this;
-    int[] intIp = {0, 0, 0, 0};
-    int[] intMask = {0, 0, 0, 0};
     private String str二进制掩码;
     private String str子网划分后的二进制掩码;
     private String str二进制Ip;
@@ -101,9 +102,13 @@ public class MainActivity extends AppCompatActivity {
         ed网络中主机的个数 = findViewById(R.id.ed网络中主机的个数);
         ed要划分网络的个数 = findViewById(R.id.ed要划分网络的个数);
         tv划分子网后的子网掩码 = findViewById(R.id.tv划分子网后的子网掩码);
+        bt归属地=findViewById(R.id.bt归属地);
+        bt说明=findViewById(R.id.bt说明);
+        bt关于=findViewById(R.id.bt关于);
         tv计算过程 = findViewById(R.id.tv计算过程);
         btXuanXiang = findViewById(R.id.btXuanXiang);
         mMyDrawable = findViewById(R.id.main_drawer_layout);
+
 
         sharedPreferences = context.getSharedPreferences("data", MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -119,6 +124,31 @@ public class MainActivity extends AppCompatActivity {
                 mMyDrawable.openDrawer(Gravity.LEFT);
             }
         });
+        bt归属地.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,IPGuishuDiActivity.class);
+                startActivity(intent);
+                mMyDrawable.closeDrawers();
+            }
+        });
+        bt说明.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog=new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.shuoming);
+                dialog.show();
+            }
+        });
+        bt关于.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog=new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.guanyu);
+                dialog.show();
+            }
+        });
+
         btJisuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(MainActivity.this, "掩码输入有误", Toast.LENGTH_LONG).show();
                     }
+
                 } else {
                     Toast.makeText(MainActivity.this, "IP输入有误", Toast.LENGTH_LONG).show();
                 }
@@ -282,7 +313,6 @@ public class MainActivity extends AppCompatActivity {
             handler.sendMessage(message);
         }
     }
-
 
 }
 

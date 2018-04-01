@@ -338,8 +338,6 @@
                         android:layout_height="match_parent">
                     </ListView>
                 </LinearLayout>
-
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -347,6 +345,6 @@
         android:layout_width="300dp"
         android:layout_gravity="start"
         android:layout_height="match_parent">
-        <include layout="@layout/memu"></include>
+        <include layout="@layout/menu"></include>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

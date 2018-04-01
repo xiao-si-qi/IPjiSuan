@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="320dp"
+    android:layout_height="match_parent"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="使用说明："
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="         在IP输入框输入正确的IP地址，在下面一个文本框输入子网掩码如：255.255.255.0(也可输入网络位长度，如16，24，等)，点击计算按钮即可算出下面所列出的可得到的结果。输入的子网掩码要符合子网掩码的规则，否则计算会不正确。" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="         子网划分时可直接输入要划分的网络个数，也可以输入网络中要保留的主机数，两者任填一个(都填了数值时，第一个有效)，点击按钮即可划分子网(点击按钮前必须先点击上面的计算按钮，分析原有IP)。" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注意："
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请不要将大的网络划分过多的子网，这会导致列表加载过长，导致程序弹出无响应对话框。"
+            />
+    </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

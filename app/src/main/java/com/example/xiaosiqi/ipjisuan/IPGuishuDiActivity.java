@@ -1,6 +1,4 @@
 package com.example.xiaosiqi.ipjisuan;
-
-
 import android.app.ProgressDialog;
 import android.os.Handler;
 import android.os.Message;

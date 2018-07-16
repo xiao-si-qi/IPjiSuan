@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = context.getSharedPreferences("data", MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
         final String IP = sharedPreferences.getString("IP", "");
         String Mask = sharedPreferences.getString("Mask", "");
         if (!(IP.equals("") && Mask.equals(""))) {
@@ -259,7 +260,30 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        mMyDrawable.setDrawerListener(new DrawerLayout.DrawerListener() {//消除侧滑菜单对下层布局的影响
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                drawerView.setClickable(true);
+
+            }
+            @Override
+            public void onDrawerClosed(View drawerView) {
+
+            }
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
     }
+
+
+
 
     void 输出结果() {
         Log.d(TAG, "onClick: " + str二进制掩码);
@@ -273,6 +297,7 @@ public class MainActivity extends AppCompatActivity {
         tv本网段可用主机数.setText(IP地址计算.j计算可用ip的个数(str二进制掩码) + "");
 
     }
+
 
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         //获得adapter

@@ -1,6 +1,4 @@
-package com.example.xiaosiqi.ipjisuan;
-
-import android.util.Log;
+package com.example.xiaosiqi.ipjisuan.tools;
 
 /**
  * Created by xiaosiqi on 2018/3/15.

@@ -1,4 +1,4 @@
-package com.example.xiaosiqi.ipjisuan;
+package com.example.xiaosiqi.ipjisuan.adapter;
 
 
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.xiaosiqi.ipjisuan.R;
+import com.example.xiaosiqi.ipjisuan.tools.IPclass;
 
 import java.util.ArrayList;
 import java.util.List;

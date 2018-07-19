@@ -1,4 +1,4 @@
-package com.example.xiaosiqi.ipjisuan;
+package com.example.xiaosiqi.ipjisuan.activity;
 import android.app.ProgressDialog;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.xiaosiqi.ipjisuan.tools.IPpanDuan;
+import com.example.xiaosiqi.ipjisuan.tools.NetIp;
+import com.example.xiaosiqi.ipjisuan.R;
+import com.example.xiaosiqi.ipjisuan.tools.Toosl;
+import com.example.xiaosiqi.ipjisuan.tools.City_class;
 
 import org.json.JSONObject;
 

@@ -1,4 +1,4 @@
-package com.example.xiaosiqi.ipjisuan;
+package com.example.xiaosiqi.ipjisuan.tools;
 
 /**
  * Created by xiaos on 2018/3/28.

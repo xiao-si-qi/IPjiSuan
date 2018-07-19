@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NetworkTestActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IP地址"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="输入域名或IP地址"
+        android:text="www.baidu.com" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="发送数据包的数目（个）"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edit_count"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:inputType="number"
+        android:text="4" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:text="发送数据包的大小(byte)"
+
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_size"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:text="64" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_5"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:text="发送数据包的间隔时间(s)"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_time"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="1" />
+</LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_ping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PING" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/ed其他命令"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入要执行的命令"
+                android:singleLine="true"
+                android:layout_weight="3"/>
+            <Button
+                android:id="@+id/btn_执行其他命令"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="执行"
+                android:layout_weight="2"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_清空"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="清空" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:maxLines="99999"
+            android:id="@+id/tv_show"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.xiaosiqi.ipjisuan;
+package com.example.xiaosiqi.ipjisuan.tools;
 
 import android.content.Context;
 import android.content.SharedPreferences;

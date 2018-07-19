@@ -1,4 +1,4 @@
-package com.example.xiaosiqi.ipjisuan;
+package com.example.xiaosiqi.ipjisuan.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -8,24 +8,29 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
-import android.renderscript.Int4;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.xiaosiqi.ipjisuan.tools.IPclass;
+import com.example.xiaosiqi.ipjisuan.tools.IPpanDuan;
+import com.example.xiaosiqi.ipjisuan.tools.IP地址计算;
+import com.example.xiaosiqi.ipjisuan.tools.IP转二进制;
+import com.example.xiaosiqi.ipjisuan.adapter.MyAdapter;
+import com.example.xiaosiqi.ipjisuan.R;
+import com.example.xiaosiqi.ipjisuan.tools.Z子网划分;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv划分子网后的子网掩码;
     private Button btJisuan;
     private Button bt子网划分;
+
+
     private TextView tv二进制IP;
     private TextView tv二进制掩码;
     private TextView tv掩码;
@@ -51,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv子网的可用主机数;
     private TextView tv总共划分的网络数;
     private TextView bt归属地;
+    private TextView bt网络测试;
     private TextView bt说明;
     private TextView bt关于;
     private ImageView btXuanXiang;
@@ -103,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         ed要划分网络的个数 = findViewById(R.id.ed要划分网络的个数);
         tv划分子网后的子网掩码 = findViewById(R.id.tv划分子网后的子网掩码);
         bt归属地=findViewById(R.id.bt归属地);
+        bt网络测试=findViewById(R.id.bt网络测试);
         bt说明=findViewById(R.id.bt说明);
         bt关于=findViewById(R.id.bt关于);
         tv计算过程 = findViewById(R.id.tv计算过程);
@@ -129,6 +138,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this,IPGuishuDiActivity.class);
+                startActivity(intent);
+                mMyDrawable.closeDrawers();
+            }
+        });
+        bt网络测试.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,NetworkTestActivity.class);
                 startActivity(intent);
                 mMyDrawable.closeDrawers();
             }
